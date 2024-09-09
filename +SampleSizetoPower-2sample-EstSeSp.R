@@ -21,17 +21,20 @@ SampleSizetoPower2sampleEstSeSp = function(
   # Args:
   #   true_p1: Real parameter value in group 1.
   #   true_p2: Real parameter value in group 2.
-  #   Se1: Sensitivity of the diagnostic test used for observing true_p1 in group 1.
-  #   Sp1: Specificity of the diagnostic test used for observing true_p1 in group 1.
-  #   Se2: Sensitivity of the diagnostic test used for observing true_p2 in group 2.  
-  #   Sp2: Specificity of the diagnostic test used for observing true_p2 in group 2.
+  #   Se1_n: Sample size of the validation sample used for the estimation of Se1.
+  #   Se1_exp: Hypothesized sensitivity of the diagnostic test for group 1.
+  #   Sp1_n: Sample size of the validation sample used for the estimation of Sp1.
+  #   Sp1_exp: Hypothesized specificity of the diagnostic test for group 1.
+  #   Se2_n: Sample size of the validation sample used for the estimation of Se2.
+  #   Se2_exp: Hypothesized sensitivity of the diagnostic test for group 2.
+  #   Sp2_n: Sample size of the validation sample used for the estimation of Sp2.
+  #   Sp2_exp: Hypothesized specificity of the diagnostic test for group 2.
   #   alpha: Type I error probability. Specify as a number between 0 and 1 rather than a percent value.
   #   pwr: Prescribed power of the test. Specify as a number between 0 and 1 rather than a percent value. 
   #   min_n: Minimum sample size (smaller sample sizes will not be examined).
   #   max_n: Maximum sample size (if power is below pwr for all n less than or equal to max_n, function returns 0).
   #   drp_rate: Highest drop-out rate for which power must not fall below pwr. Specify as a number between 0 and 1 rather than a percent value. 
   #   R: Number of simulations to be used.
-  #   met: Method - Available methods: "Wald", "Wilson", "Agresti-Coull", "Clopper-Pearson", "Blaker"
   #
   # Returns:
   #   The minimal sample size n satisfying that for all sample sizes from drp_rate*n to n power is at least pwr.
@@ -281,7 +284,7 @@ SampleSizetoPower2sampleEstSeSp(true_p1 = 0.4,
                                 pwr = 0.8,
                                 min_n = 20,
                                 max_n = 5000,
-                                drprate = 0.20,
+                                drprate = 0.15,
                                 R = 20000)
 
 
